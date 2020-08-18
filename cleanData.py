@@ -4,18 +4,36 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-#geo_df = gpd.read_file('data/geo-data/ne_110m_admin_0_countries.shp')
 
-data_2019 = pd.read_csv('data/happiness-score.csv')
+
+# import dataset 
+geo_df = gpd.read_file('data/geo-data/ne_110m_admin_0_countries.shp')
+data_2019 = pd.read_csv('data/datasets-894-813759-2019.csv')
+data_2019 = pd.read_csv('data/datasets-894-813759-2019.csv')
 gdp = pd.read_csv('data/gdp.csv')
-
 
 
  # Part1 Clean Data
 
-#country_score = data_2019[['Country or region', 'Score']]
-#country_geometry = geo_df[['SOVEREIGNT', 'geometry']]
-#geo_merge = country_geometry.merge(country_score, left_on='SOVEREIGNT', right_on='Country or region', how='left')
+#refine data according to the prompt (set United States as United States of America)
+column = data_2019.columns
+    
+data_2019.iloc[18, column.get_loc('Country or region')] = 'United States of America'
+
+    
+country_score = data_2019[['Country or region', 'Score']]
+country_geometry = geo_df[['SOVEREIGNT', 'geometry']]
+geo_merge = country_geometry.merge(country_score, left_on='SOVEREIGNT', right_on='Country or region', how='left')
+
+geo_filtered = geo_merge[geo_merge['Score'].notnull()]
+
+fig, ax = plt.subplots(1)
+geo_merge.plot(color= '#CCCCCC', ax=ax)
+geo_filtered.plot(column='Score', cmap='OrRd', ax=ax, legend=True)
+
+plt.title('Happiness Score Map')
+plt.show()
+
 
 
 # Part2 Clean Data

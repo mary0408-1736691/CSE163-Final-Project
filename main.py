@@ -9,9 +9,9 @@ import plotly.graph_objects as go
 import cleanData
 
 
-def plot_task1(data_2019, geo_df):
+def plot_world_happy(data_2019, geo_df):
 
-    geo_merge = cleanData.clean_task1(data_2019, geo_df)
+    geo_merge = cleanData.clean_map_data(data_2019, geo_df)
     geo_filtered = geo_merge[geo_merge['Score'].notnull()]
 
     fig, ax = plt.subplots(1)
@@ -24,8 +24,8 @@ def plot_task1(data_2019, geo_df):
 
 
 
-def plot_task2(data_2019, gdp):
-    gdp_merged = cleanData.clean_task2(data_2019, gdp)
+def plot_gdp_happy(data_2019, gdp):
+    gdp_merged = cleanData.clean_gdp_data(data_2019, gdp)
     fig = px.scatter(gdp_merged, x='Country Name', y='2019', color='Score',
                  size='Score', log_y=True,
                  labels={
@@ -41,8 +41,8 @@ def plot_task2(data_2019, gdp):
     fig.show()
 
 
-def analyze_task3(data_2019):
-    nump = cleanData.clean_task3(data_2019)
+def plot_correlation(data_2019):
+    nump = cleanData.clean_correlation_data(data_2019)
     axis_label = ['Score', 'GDP per capita', 'Social support',
                   'Healthy life expectancy', 'Freedom to make life choices',
                   'Generosity', 'Perceptions of corruption']
@@ -69,9 +69,9 @@ def main():
     data_2019 = pd.read_csv('data/datasets-894-813759-2019.csv')
     gdp = pd.read_csv('data/gdp.csv')
 
-    #plot_task1(data_2019, geo_df)
-    #plot_task2(data_2019, gdp)
-    analyze_task3(data_2019)
+    plot_world_happy(data_2019, geo_df)
+    plot_gdp_happy(data_2019, gdp)
+    plot_correlation(data_2019)
 
 
 if  __name__ == '__main__':

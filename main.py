@@ -4,6 +4,7 @@ import geopandas as gpd
 import plotly.express as px
 import matplotlib.pyplot as plt
 import numpy as np
+import plotly.graph_objects as go
 
 import cleanData
 
@@ -42,7 +43,24 @@ def plot_task2(data_2019, gdp):
 
 def analyze_task3(data_2019):
     nump = cleanData.clean_task3(data_2019)
-    print(nump)
+    axis_label = ['Score', 'GDP per capita', 'Social support',
+                  'Healthy life expectancy', 'Freedom to make life choices',
+                  'Generosity', 'Perceptions of corruption']
+    corr_map = go.Figure(data=go.Heatmap(
+        z=nump,
+        x=axis_label,
+        y=axis_label,
+        colorscale='Viridis'))
+    corr_map.update_layout(
+        title={
+            'text': "Correlations Between Factors of Happiness",
+            'y':0.96,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'},
+        xaxis_nticks=30,
+        yaxis_nticks=30)
+    corr_map.show()
 
 
 

@@ -1,5 +1,5 @@
 ## CSE163-Final-Project: “Happiness Factors”
-#### Author: Xinyue Ma(Mary), Ziqi Chen(Vicky)
+#### Authors: Xinyue Ma(Mary), Ziqi Chen(Vicky)
 
 #### 1. Libaries needed before running the program
   * pandas: use this library as a tool to manipulate dataframes.

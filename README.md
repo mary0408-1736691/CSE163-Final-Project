@@ -31,4 +31,5 @@ Same ways if you want to see the other figures.
   * You will get a HeatMap that demonstrates the correlation bettween each Happiness indicators.
 
 
-  
+ #### 5. Other things 
+  * Import the cleanData.py in main.py, since we need the data cleaned by the functions in cleanData.py

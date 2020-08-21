@@ -23,8 +23,7 @@
   * Download the repository as a folder that inlcudes all files. 
   * Please set directory to the location of the project folder to maintain the programs works, since we set relative path to read data in main.py.
   * You can run code through main.py 
-  * If you want to see the first map figure in plot_world_happy, please make  two plot funtions commented (#plot_gdp_happy(data_2019, gdp) and
-# plot_correlation(data_2019) in main function in main.py. 
+  * If you want to see the first map figure in plot_world_happy, please make  two plot funtions commented (#plot_gdp_happy(data_2019, gdp)) and (#plot_correlation(data_2019)) in main function in main.py. 
 Same ways if you want to see the other figures. 
 
 

@@ -1,7 +1,8 @@
 import numpy as np
 
 # Part1 Clean Data
-#refine data according to the prompt (set United States as United States of America)
+# refine data according to the prompt (set United States as United States of
+# America)
 def clean_map_data(data_2019, geo_df):
     column = data_2019.columns
     row = data_2019[data_2019['Country or region'] == 'United States'].index[0]

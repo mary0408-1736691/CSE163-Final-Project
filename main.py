@@ -23,7 +23,6 @@ def plot_world_happy(data_2019, geo_df):
     plt.show()
 
 
-
 def plot_gdp_happy(data_2019, gdp):
     gdp_merged = cleanData.clean_gdp_data(data_2019, gdp)
     fig = px.scatter(gdp_merged, x='Country Name', y='2019', color='Score',
@@ -61,7 +60,6 @@ def plot_correlation(data_2019):
         xaxis_nticks=30,
         yaxis_nticks=30)
     corr_map.show()
-
 
 
 def main():

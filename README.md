@@ -17,6 +17,7 @@
   * cleanData.py: this file cleans the data needed for main.py
   * mian.py: this file does the major job on analyzing and ploting
   * testing.py: this file tests whether we prepared data correctly in cleanData.py
+  * cse163_utils: Help implementating function for testing.py
 
 #### 4. Running Instruction 
   * Download the repository as a folder that inlcudes all files. 
@@ -31,4 +32,6 @@ Same ways if you want to see the other figures.
   * You will get a HeatMap that demonstrates the correlation bettween each Happiness indicators.
 
 
-  
+ #### 5. Other things 
+  * Import the cleanData.py in main.py, since we need the data cleaned by the functions in cleanData.py
+  * Import the cse163_utils in testing.py
